@@ -41,26 +41,6 @@ func (h *buahHandler) GetBuahs(c *gin.Context) {
 	})
 }
 
-func (h *buahHandler) RootHandler(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"Halo":        "Saya BuahIn",
-		"Let Me Live": "Im tired PLS",
-	})
-}
-
-func (h *buahHandler) HelloHandler(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"Halo":        "TOLONGGG",
-		"Let Me Live": "HELP MEEEE",
-	})
-}
-
-func (h *buahHandler) BuahsHandler(c *gin.Context) {
-	id := c.Param("id")
-	title := c.Param("title")
-
-	c.JSON(http.StatusOK, gin.H{"id": id, "title": title})
-}
 
 func (h *buahHandler) QueryHandler(c *gin.Context) {
 	title := c.Query("title")
