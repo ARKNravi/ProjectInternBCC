@@ -15,6 +15,7 @@ import (
 func Signup(c *gin.Context) {
 	// Get the email/pass of req body
 	var body struct {
+		Username string
 		Email    string
 		Password string
 	}
@@ -38,7 +39,7 @@ func Signup(c *gin.Context) {
 	}
 
 	// Create the user
-	user := models.User{Email: body.Email, Password: string(hash)}
+	user := models.User{Username: body.Username, Email: body.Email, Password: string(hash)}
 	result := initializer.DB.Create(&user)
 
 	if result.Error != nil {
