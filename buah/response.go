@@ -1,14 +1,18 @@
 package buah
 
-import "time"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type BuahResponse struct {
-	ID          int    `json:"id"`
-	Jenis       string `json:"jenis"`
-	Price       int    `json:"price"`
+	gorm.Model
+	Nama        string `json:"nama"`
+	Price       uint   `json:"price"`
 	Description string `json:"description"`
-	Matang      bool   `json:"matang"`
-	Discount    int    `json:"discount"`
+	Discount    uint   `json:"discount"`
+	Quantity    uint   `json:"quantity"`
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
 }

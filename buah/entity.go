@@ -1,14 +1,19 @@
 package buah
 
-import "time"
+import (
+	"time"
+
+	"gorm.io/gorm"
+)
 
 type Buah struct {
-	ID          int
-	Jenis       string
+	gorm.Model
+	Nama        string
 	Description string
-	Price       int
-	Discount    int
-	Matang      bool
+	Price       uint
+	Discount    uint
+	Quantity    uint
 	CreatedAt   time.Time
 	UpdatedAt   time.Time
+	DeletedAt   time.Time
 }
